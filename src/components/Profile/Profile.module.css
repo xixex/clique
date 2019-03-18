@@ -1,0 +1,6 @@
+.content{
+  grid-area: profile;
+  max-height: 200px;
+
+  /*border: solid 3px green;*/
+}

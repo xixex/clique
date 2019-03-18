@@ -1,0 +1,36 @@
+.message {
+    border-radius: 20px;
+    border: solid 1px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 1em;
+    max-width: 70%;
+    min-width: 4em;
+    margin: 1em;
+}
+.message__name{
+    font-weight: bold;
+}
+
+.message.from {
+    align-self: flex-start;
+    border-color: cyan;
+}
+
+.message.to {
+    align-self: flex-end;
+    border-color: cornflowerblue;
+}
+
+.message__text {
+
+}
+
+.message__time {
+    font-size: 0.72em;
+    font-weight: lighter;
+    opacity: 0.6;
+    justify-self: flex-end;
+    align-self: flex-end;
+}

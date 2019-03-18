@@ -1,0 +1,22 @@
+.newPost{
+    width: 70%;
+    max-height: 20em;
+    display: grid;
+    grid-template-rows: 4fr 1fr;
+}
+.newPost__input{
+        overflow: hidden;
+        min-height: 100px;
+        resize: none;
+        border-radius: 8px;
+        border: 1px solid #ddd;
+        padding: 0.5rem;
+        color: #666;
+        font-family: 'Open Sans', sans-serif;
+        font-size: 1em;
+    }
+.newPost__button{
+    width: 6em;
+    justify-self: end;
+    position: relative;
+}

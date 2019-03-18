@@ -1,0 +1,19 @@
+.messages__header{
+  width: 100%;
+  height: 3em;
+  border-bottom: solid 1px rgba(90, 18, 176, 0.33);
+  display: flex;
+}
+.messages__search{
+  display: flex;
+  width: 30%;
+  border-right: 1px solid rgba(90, 18, 176, 0.33);
+
+  justify-content: flex-start;
+}
+.messages__search input{
+  height: 70%;
+  width: 80%;
+  align-self: center;
+  border-radius: 4px;
+}

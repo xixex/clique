@@ -1,0 +1,12 @@
+.header{
+    /*border: 1px solid red;*/
+    grid-area: h;
+    height: 60px;
+    z-index: 2;
+    position: absolute;
+    top: 0;
+    width: 100%;
+}
+.header__img{
+    width: 50px;
+}

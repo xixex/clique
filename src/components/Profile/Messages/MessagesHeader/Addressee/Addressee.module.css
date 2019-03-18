@@ -1,0 +1,19 @@
+.messages__to{
+    display: flex;
+    width: 70%;
+}
+.messages__name{
+    /*justify-self: center;*/
+    align-self: center;
+    font-weight: bold;
+    margin-left: 0.5em;
+}
+.messages__img{
+    align-self: center;
+    justify-self: center;
+    width: 2.7em;
+    height: 2.7em;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
