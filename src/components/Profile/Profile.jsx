@@ -1,12 +1,12 @@
 import React from 'react';
 import styles from './Profile.module.css'
 import Posts from "./Posts/Posts";
-import AboutMe from "./AboutMe/AboutMe";
+import About from "./About/About";
 
-const Profile = () => {
+const Profile = (props) => {
   return (
     <div className={styles.content}>
-      <AboutMe/>
+      <About person={props.person}/>
     </div>
   );
 };

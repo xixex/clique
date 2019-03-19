@@ -2,13 +2,13 @@ import styles from "./Posts.module.css";
 import React from "react";
 import Post from "./Post/Post";
 import NewPost from "./NewPost/NewPost"
-const Posts = () => {
+
+const Posts = (props) => {
+  let postElements = props.posts.map(e => <Post post={e}/>);
   return (
     <div className={styles.posts}>
-      <NewPost />
-      <Post/>
-      <Post/>
-      <Post/>
+      <NewPost/>
+      {postElements}
     </div>
   );
 };

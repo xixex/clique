@@ -10,22 +10,20 @@ import {Route, BrowserRouter, Switch} from 'react-router-dom';
 import Music from "./components/Profile/Music/Music";
 import Settings from "./components/Profile/Settings/Settings";
 
-const App = () => {
+const App = (props) => {
   return (
     <BrowserRouter>
       <div className="app-wrapper">
         <Header/>
         <div className="content">
-          <Profile/>
+          <Profile person={props.person}/>
           <Navigation/>
-
           <Switch>
-
-            <Route component={Posts} path='/posts'/>
-            <Route component={Messages} path='/messages'/>
-            <Route component={News} path='/news'/>
-            <Route component={Music} path='/music'/>
-            <Route component={Settings} path='/settings'/>
+            <Route render={() => <Posts posts={props.posts}/>} path='/posts'/>
+            <Route render={() => <Messages messages={props.messages}/>} path='/messages'/>
+            <Route render={News} path='/news'/>
+            <Route render={Music} path='/music'/>
+            <Route render={Settings} path='/settings'/>
           </Switch>
         </div>
       </div>

@@ -4,22 +4,22 @@
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    padding: 1em;
+    padding: 0.7em;
     max-width: 70%;
     min-width: 4em;
-    margin: 1em;
+    margin: 0.5em;
 }
 .message__name{
     font-weight: bold;
 }
 
 .message.from {
-    align-self: flex-start;
+    justify-self: start;
     border-color: cyan;
 }
 
 .message.to {
-    align-self: flex-end;
+    justify-self: end;
     border-color: cornflowerblue;
 }
 
