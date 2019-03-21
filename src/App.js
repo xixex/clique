@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React from 'react';
 import './App.css';
 import Header from "./components/Header/Header";
 import Navigation from "./components/Navigation/Navigation";
@@ -6,7 +6,7 @@ import Profile from "./components/Profile/Profile";
 import Posts from "./components/Posts/Posts";
 import Messages from "./components/Messages/Messages";
 import News from "./components/News/News"
-import {Route, BrowserRouter, Switch} from 'react-router-dom';
+import {Route, Switch} from 'react-router-dom';
 import Music from "./components/Music/Music";
 import Settings from "./components/Settings/Settings";
 

@@ -1,5 +1,4 @@
-import {renderEntireTree} from "./render";
-
+let renderEntireTree;
 let state = {
   posts: [
     {
@@ -35,16 +34,22 @@ let state = {
     },
     {text: "Hello hello"}
   ],
-
 };
+
 export let addPost = (text) => {
   state.posts.push({
-    postBy:{
+    postBy: {
       img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRVMNrgrlhHs9bSC63sLecJsZ6S0QS2-iYJWMlQQFFhaU3vblOt',
       name: 'Misha',
     },
     text: text
   });
-  renderEntireTree(state);
+  renderEntireTree();
 };
+
+export const subscribe = (observer) => {
+  renderEntireTree = observer;
+};
+
+
 export default state;
