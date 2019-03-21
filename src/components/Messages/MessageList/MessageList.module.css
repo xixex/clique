@@ -1,0 +1,8 @@
+.messages__list{
+  border-left: 1px solid rgba(90, 18, 176, 0.33);
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+  overflow-y: scroll;
+
+}

@@ -1,12 +1,16 @@
 import React from 'react';
 import styles from './Profile.module.css'
-import Posts from "./Posts/Posts";
-import About from "./About/About";
+
 
 const Profile = (props) => {
   return (
     <div className={styles.content}>
-      <About person={props.person}/>
+      <div className={styles.header}>
+        <div className={styles.info}>
+          <h1>{props.person.name}</h1>
+          <h4>{props.person.country}</h4>
+        </div>
+      </div>
     </div>
   );
 };
