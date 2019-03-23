@@ -47,8 +47,7 @@ let store = {
   getState() {
     return this._state;
   },
-  dispatch(action){
-    debugger;
+  dispatch(action) {
     switch (action.type) {
       case 'ADD-POST': {
         this._state.posts.push({
@@ -58,6 +57,11 @@ let store = {
           },
           text: action.text
         });
+        this._callObserver(this._state);
+        break;
+      }
+      case 'UPDATE-NEW-POST-TEXT': {
+        this._state.newPostText = action.text;
         this._callObserver(this._state);
         break;
       }

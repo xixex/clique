@@ -8,7 +8,7 @@ const Posts = (props) => {
   let postElements = props.posts.map(e => <Post post={e} key={e.text}/>).reverse();
   return (
     <div className={styles.posts}>
-      <NewPost dispatch = {props.dispatch}/>
+      <NewPost newPostText={props.newPostText} dispatch={props.dispatch}/>
       {postElements}
     </div>
   );
