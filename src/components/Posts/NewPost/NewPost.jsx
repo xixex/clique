@@ -1,18 +1,17 @@
 import styles from "./NewPost.module.css";
 import React from "react";
+import {updateNewPostTextActionCreator, addPostTextActionCreator} from "../../../state";
 
 const NewPost = (props) => {
-  debugger;
   let textRef = React.createRef();
+
   let sendPost = () => {
-    props.dispatch({type: 'ADD-POST', text: textRef.current.value});
+    props.dispatch(addPostTextActionCreator(props.newPostText));
   };
 
   let onPostChange = () => {
-
     let newText = textRef.current.value;
-    let action = {type: 'UPDATE-NEW-POST-TEXT', text: newText};
-    props.dispatch(action);
+    props.dispatch(updateNewPostTextActionCreator(newText));
   };
 
   return (

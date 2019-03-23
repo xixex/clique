@@ -1,3 +1,6 @@
+const ADD_POST = 'ADD-POST';
+const UPDATE_NEW_POST_TEXT = 'UPDATE-NEW-POST-TEXT';
+
 let store = {
   _state: {
     posts: [
@@ -43,13 +46,12 @@ let store = {
     this._callObserver = observer;
   },
 
-
   getState() {
     return this._state;
   },
   dispatch(action) {
     switch (action.type) {
-      case 'ADD-POST': {
+      case ADD_POST: {
         this._state.posts.push({
           postBy: {
             img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRVMNrgrlhHs9bSC63sLecJsZ6S0QS2-iYJWMlQQFFhaU3vblOt',
@@ -60,7 +62,7 @@ let store = {
         this._callObserver(this._state);
         break;
       }
-      case 'UPDATE-NEW-POST-TEXT': {
+      case UPDATE_NEW_POST_TEXT: {
         this._state.newPostText = action.text;
         this._callObserver(this._state);
         break;
@@ -70,10 +72,10 @@ let store = {
         break;
       }
     }
-
   }
-
 };
 
+export const updateNewPostTextActionCreator = (text) => ({type: UPDATE_NEW_POST_TEXT, text: text});
+export const addPostTextActionCreator = (text) => ({type: ADD_POST, text: text});
 
 export default store;
