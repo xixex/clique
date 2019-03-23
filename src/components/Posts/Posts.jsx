@@ -4,10 +4,11 @@ import Post from "./Post/Post";
 import NewPost from "./NewPost/NewPost"
 
 const Posts = (props) => {
+
   let postElements = props.posts.map(e => <Post post={e} key={e.text}/>).reverse();
   return (
     <div className={styles.posts}>
-      <NewPost addPost = {props.addPost}/>
+      <NewPost dispatch = {props.dispatch}/>
       {postElements}
     </div>
   );

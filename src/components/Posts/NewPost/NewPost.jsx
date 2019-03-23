@@ -4,7 +4,7 @@ import React from "react";
 const NewPost = (props) => {
   let textRef = React.createRef();
   let sendPost = ()=>{
-    props.addPost(textRef.current.value);
+    props.dispatch({type: 'ADD-POST', text: textRef.current.value});
   };
 
   return (

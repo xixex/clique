@@ -1,20 +1,20 @@
-import state from './state';
+import store from "./state";
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import {BrowserRouter} from "react-router-dom";
-import {subscribe} from "./state";
-import {addPost} from './state';
 
-let renderEntireTree = () => {
+
+let renderEntireTree = (state) => {
   ReactDOM.render(
     <BrowserRouter>
-      <App state={state} addPost={addPost}/>
+      <App state={state}
+           dispatch={store.dispatch.bind(store)}/>
     </BrowserRouter>,
     document.getElementById('root')
   );
 };
 
-renderEntireTree(state);
-subscribe(renderEntireTree);
+renderEntireTree(store.getState());
+store.subscribe(renderEntireTree);

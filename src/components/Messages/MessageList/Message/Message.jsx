@@ -3,7 +3,6 @@ import styles from './Message.module.css'
 
 
 const Message = (props) => {
-  console.log(props.from);
   return (
 
     <div className={`${styles.message}  ${props.sender ? styles.from : styles.to}`}>
