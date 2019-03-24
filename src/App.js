@@ -12,22 +12,26 @@ import Settings from "./components/Settings/Settings";
 
 
 const App = (props) => {
+
   return (
 
-      <div className="app-wrapper">
-        <Header/>
-        <div className="content">
-          <Profile person={props.state.person}/>
-          <Navigation/>
-          <Switch>
-            <Route render={() => <Posts posts={props.state.posts} newPostText={props.state.newPostText} dispatch={props.dispatch}/>} path='/posts' />
-            <Route render={() => <Messages messages={props.state.messages}/>} path='/messages'/>
-            <Route render={News} path='/news'/>
-            <Route render={Music} path='/music'/>
-            <Route render={Settings} path='/settings'/>
-          </Switch>
-        </div>
+    <div className="app-wrapper">
+      <Header/>
+      <div className="content">
+        <Profile person={props.state.person}/>
+        <Navigation/>
+        <Switch>
+          <Route render={() => <Posts posts={props.state.posts} dispatch={props.dispatch}/>}
+                 path='/posts'/>
+          <Route render={() => <Messages newMessageText={props.state.newMessageText}  dispatch={props.dispatch}
+                                         messages={props.state.messages}/>} path='/messages'
+               />
+          <Route render={News} path='/news'/>
+          <Route render={Music} path='/music'/>
+          <Route render={Settings} path='/settings'/>
+        </Switch>
       </div>
+    </div>
   );
 };
 

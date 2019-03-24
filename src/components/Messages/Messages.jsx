@@ -3,8 +3,10 @@ import styles from './Messages.module.css'
 import MessageList from "./MessageList/MessageList";
 import Dialogs from "./Dialogs/Dialogs";
 import MessagesHeader from "./MessagesHeader/MessagesHeader";
+import NewMessage from "./NewMessage/NewMessage";
 
 const Messages = (props) => {
+  console.log(props);
   return (
     <div className={styles.messages}>
       <MessagesHeader/>
@@ -12,6 +14,7 @@ const Messages = (props) => {
         <Dialogs/>
         <MessageList messages={props.messages}/>
       </div>
+      <NewMessage newMessageText = {props.newMessageText} dispatch={props.dispatch}/>
     </div>
   );
 };

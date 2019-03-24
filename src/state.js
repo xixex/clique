@@ -1,5 +1,7 @@
 const ADD_POST = 'ADD-POST';
 const UPDATE_NEW_POST_TEXT = 'UPDATE-NEW-POST-TEXT';
+const UPDATE_NEW_MESSAGE_TEXT = 'UPDATE-NEW-MESSAGE-TEXT';
+const SEND_MESSAGE = 'SEND-MESSAGE';
 
 let store = {
   _state: {
@@ -31,12 +33,18 @@ let store = {
       {sender: {name: "Максим"}, text: "How are you "},
       {sender: {name: "Максим"}, text: "How are you "},
       {sender: {name: "Максим"}, text: "How are you "},
+      {sender: {name: "Максим"}, text: "How are you "},
+      {sender: {name: "Максим"}, text: "How are you "},
+      {sender: {name: "Максим"}, text: "How are you "},
+      {sender: {name: "Максим"}, text: "How are you "},
       {
         sender: {name: "Максим"},
         text: "How are youHow are youHow are youHow are youHow are youHow are youHow are youHow are youHow are youHow are youHow are youHow are youHow are youHow are youHow are youHow are youHow are youHow are youHow are youHow are you "
       },
       {text: "Hello hello"}
     ],
+    newPostText: "",
+    newMessageText: ""
   },
 
   _callObserver() {
@@ -67,6 +75,17 @@ let store = {
         this._callObserver(this._state);
         break;
       }
+      case UPDATE_NEW_MESSAGE_TEXT: {
+        this._state.newMessageText = action.text;
+        this._callObserver(this._state);
+        break;
+      }
+      case SEND_MESSAGE: {
+        this._state.messages.push({text: action.text});
+        this._state.newMessageText = '';
+        this._callObserver(this._state);
+        break;
+      }
       default: {
         console.log('wrong action type, ' + action.type);
         break;
@@ -75,7 +94,13 @@ let store = {
   }
 };
 
+
 export const updateNewPostTextActionCreator = (text) => ({type: UPDATE_NEW_POST_TEXT, text: text});
 export const addPostTextActionCreator = (text) => ({type: ADD_POST, text: text});
+export const updateNewMessageTextActionCreator = (text) => ({
+  type: UPDATE_NEW_MESSAGE_TEXT,
+  text: text
+});
+export const sendMessageActionCreator = (text) => ({type: SEND_MESSAGE, text: text});
 
 export default store;

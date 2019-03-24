@@ -1,0 +1,25 @@
+.newMessage{
+    display: flex;
+    margin: 1em ;
+}
+.newMessage__input{
+    padding-left: 4px;
+    height: 2.6em;
+    align-self: center;
+    display: flex;
+    margin-right: 0.6em;
+    border-radius: 4px;
+    border: none;
+    background-color:rgba(255,255,255, 0.2);
+    width: 30em;
+}
+.newMessage__btn{
+    padding: 0 10px;
+    height: 2.6em;
+    align-self: center;
+    display: flex;
+    margin-right: 0.6em;
+    border-radius: 10%;
+    border: solid 1px white;
+    background-color:rgba(0,0,0, 0);
+}

@@ -1,7 +1,8 @@
 .newPost{
     width: 30em;
-    max-height: 20em;
-    display: grid;
+    display: flex;
+    flex-direction: column;
+    height: 20em;
     grid-template-rows: 4fr 1fr;
 }
 .newPost__input{
@@ -15,20 +16,19 @@
         font-family: 'Open Sans', sans-serif;
         font-size: 1em;
     }
-.newPost__button{
-    width: 6em;
-    justify-self: end;
-    color: black;
-    background-color: white;
-    position: relative;
+.newPost__button:focus {
+    outline:none ;
 }
-.newPost__button {
+
+.newPost__button{
+    margin-left: auto;
+    position: relative;
     width: 140px;
     height: 45px;
     /*font-family: 'Roboto', sans-serif;*/
     font-size: 11px;
     text-transform: uppercase;
-    letter-spacing: 2.5px;
+    letter-spacing: 3px;
     font-weight: 500;
     color: #000;
     background-color: #fff;
