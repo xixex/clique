@@ -3,9 +3,11 @@ import styles from './Header.module.css'
   const Header = ()=>{
   return (
     <header className={styles.header}>
-      {/*<img className={styles.header__img}*/}
-           {/*src="https://www.designfreelogoonline.com/wp-content/uploads/2015/05/00496-cat-logo-design-free-logomaker-01.png"*/}
-           {/*alt=""/>*/}
+      <img className={styles.header__img}
+           src="https://i.ibb.co/8gSvcc6/Untitled-1.png"
+           alt=""/>
+      <input type="text" className={styles.header__search}/>
+
     </header>
   );
 };

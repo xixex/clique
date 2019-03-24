@@ -1,13 +1,16 @@
 *{
   padding: 0;
   margin: 0;
-
+  color: white;
+  font-family: 'Dosis', sans-serif;
+}
+html{
+  background-color: black;
 }
 .content{
-  /*height: 100vh;*/
-  max-height: 100vh;
   display: flex;
   flex-direction: column;
+  z-index: -2;
 }
 
 

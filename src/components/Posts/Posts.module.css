@@ -1,7 +1,9 @@
 .posts{
     display: flex;
+    margin-top: 3em;
     flex-direction: column;
     justify-items: center;
     align-items: center;
+
 
 }

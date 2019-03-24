@@ -1,5 +1,6 @@
 .content{
-  max-height: 200px;
+  display: flex;
+  flex-direction: column;
 }
 .header {
   position: relative;
@@ -7,10 +8,8 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  height: 200px;
-  max-height: 200px;
-  color: #eee;
-  grid-area: header;
+  height: 22em;
+  color: white;
 }
 
 .header:before {
@@ -23,9 +22,8 @@
   -webkit-backface-visibility: hidden;
   -webkit-transform: translateZ(0) scale(1.0, 1.0);
   transform: translateZ(0);
-  background: #1B2030 url("https://www.azonano.com/images/Article_Images/ImageForArticle_4983(1).jpg") top center no-repeat;
+  background: #1B2030 url("http://paperlief.com/images/california-palm-trees-tumblr-background-wallpaper-2.jpg") no-repeat fixed top center;
   background-size: cover;
-  background-attachment: fixed;
   animation: grow 60s linear 10ms infinite;
   transition: all 0.2s ease-in-out;
   z-index: -2
@@ -36,15 +34,39 @@
 }
 
 .info {
-  width: 100%;
-  padding: 5% 10% 0 10%;
-  text-align: center;
-  text-shadow: 0 2px 3px rgba(0, 0, 0, 0.2);
-  flex: 0 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+  position: relative;
+  top: -60px;
 }
-
+.info h1{
+  justify-self: center;
+  align-self: center;
+  font-size: 4em;
+  font-weight: 700;
+}
 .info h4 {
-  font-size: 0.7em
+  font-size: 1em;
+  font-weight: normal;
+  justify-self: center;
+  align-self: center;
+}
+.avatar{
+  width: 7em;
+  height: 7em;
+  border-radius: 50%;
+  align-self: center;
+  position: relative;
+  top: -60px;
+  overflow: hidden;
+}
+.avatar img{
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 @keyframes grow {
