@@ -16,12 +16,28 @@
 
 .message.from {
     align-self: flex-start;
-    border-color: cyan;
+    box-shadow:
+            inset 0 0 10px #fff,
+            inset 2px 0 5px #f0f,
+            inset -2px 0 5px #0ff,
+            inset 2px 0 5px #f0f,
+            inset -2px 0 5px #0ff,
+            0 0 10px #fff,
+            -2px 0 5px #ff00ff,
+            2px 0 5px #0ff;
 }
 
 .message.to {
     align-self: flex-end;
-    border-color: cornflowerblue;
+    box-shadow:
+            inset 0 0 10px #fff,
+            inset 2px 0 5px #0f0,
+            inset -2px 0 5px #C2FF00,
+            inset 2px 0 5px #0f0,
+            inset -2px 0 5px #C2FF00,
+            0 0 10px #fff,
+            -2px 0 5px #0f0,
+            2px 0 5px #C2FF00;
 }
 
 .message__text {
