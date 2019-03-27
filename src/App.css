@@ -18,7 +18,6 @@ input:focus{
 .content {
     display: flex;
     flex-direction: column;
-    max-height: 200vh;
     z-index: -2;
 }
 

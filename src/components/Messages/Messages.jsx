@@ -6,7 +6,6 @@ import MessagesHeader from "./MessagesHeader/MessagesHeader";
 import NewMessage from "./NewMessage/NewMessage";
 
 const Messages = (props) => {
-  console.log(props);
   return (
     <div className={styles.messages}>
       <MessagesHeader/>

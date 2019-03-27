@@ -1,8 +1,10 @@
 import React from 'react';
 import styles from './NewMessage.module.css';
 
-import {updateNewMessageTextActionCreator} from '../../../state'
-import {sendMessageActionCreator} from '../../../state'
+import {
+  updateNewMessageTextActionCreator,
+  sendMessageActionCreator
+} from '../../../redux/messagesPageReducer'
 
 
 const NewMessage = (props) => {
@@ -14,15 +16,17 @@ const NewMessage = (props) => {
   };
 
   const onMessageUpdate = () => {
-
-    props.dispatch(updateNewMessageTextActionCreator(ref.current.value))
+    let newText = ref.current.value;
+    props.dispatch(updateNewMessageTextActionCreator(newText))
   };
 
   return (
     <div className={styles.newMessage}>
+      <div className={styles.newMessage__wrapper}>
       <input className={styles.newMessage__input} type="text" placeholder="Enter message.."
              autoFocus ref={ref} value={props.newMessageText} onChange={onMessageUpdate}/>
       <button className={styles.newMessage__btn} onClick={onSendButtonClick}>SEND</button>
+      </div>
     </div>
   );
 };

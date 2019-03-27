@@ -1,11 +1,12 @@
 import styles from "./NewPost.module.css";
 import React from "react";
-import {updateNewPostTextActionCreator, addPostTextActionCreator} from "../../../state";
+import {updateNewPostTextActionCreator, addPostTextActionCreator} from "../../../redux/postsPageReducer";
 
 const NewPost = (props) => {
+
   let textRef = React.createRef();
 
-  let sendPost = () => {
+  let onSendPostClick = () => {
     props.dispatch(addPostTextActionCreator(props.newPostText));
   };
 
@@ -23,7 +24,7 @@ const NewPost = (props) => {
                 ref={textRef}
                 value={props.newPostText}
                 onChange={onPostChange}/>
-      <button className={styles.newPost__button} onClick={sendPost}>Post</button>
+      <button className={styles.newPost__button} onClick={onSendPostClick}>Post</button>
     </div>
   );
 };
