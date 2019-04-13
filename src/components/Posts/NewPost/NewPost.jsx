@@ -1,33 +1,32 @@
-import styles from "./NewPost.module.css";
-import React from "react";
-import {updateNewPostTextActionCreator, addPostTextActionCreator} from "../../../redux/postsPageReducer";
+import React from 'react';
+import styles from './NewPost.module.css';
 
 const NewPost = (props) => {
+  const textRef = React.createRef();
 
-  let textRef = React.createRef();
-
-  let onSendPostClick = () => {
-    props.dispatch(addPostTextActionCreator(props.newPostText));
+  const onSendPostClick = () => {
+    props.onSendPostClick();
   };
 
-  let onPostChange = () => {
-    let newText = textRef.current.value;
-    props.dispatch(updateNewPostTextActionCreator(newText));
+  const onPostChange = () => {
+    const newText = textRef.current.value;
+    props.onPostChange(newText);
   };
 
   return (
     <div className={styles.newPost}>
-      <textarea placeholder="What's up?"
-                className={styles.newPost__input}
-                autoFocus
-                maxLength={300}
-                ref={textRef}
-                value={props.newPostText}
-                onChange={onPostChange}/>
+      <textarea
+        placeholder="What's up?"
+        className={styles.newPost__input}
+        autoFocus
+        maxLength={300}
+        ref={textRef}
+        value={props.newPostText}
+        onChange={onPostChange}
+      />
       <button className={styles.newPost__button} onClick={onSendPostClick}>Post</button>
     </div>
   );
 };
 
 export default NewPost;
-

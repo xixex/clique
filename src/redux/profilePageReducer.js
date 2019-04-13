@@ -1,9 +1,9 @@
-let initialState = {
-  person: {id: 1, name: 'Misha Sonstav', country: 'Belarus'}
+const initialState = {
+  person: { id: 1, name: 'Misha Sonstav', country: 'Belarus' },
 };
 
 function profilePageReducer(state = initialState, action) {
-  return state
+  return state;
 }
 
 export default profilePageReducer;

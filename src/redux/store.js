@@ -1,54 +1,54 @@
-import messagesPageReducer from './messagesPageReducer'
-import postsPageReducer from './postsPageReducer'
+import messagesPageReducer from './messagesPageReducer';
+import postsPageReducer from './postsPageReducer';
 
-let store = {
+const store = {
   _state: {
     messagesPage: {
       messages: [
-        {sender: {name: "Максим"}, text: "Hello :)"},
-        {sender: {name: "Максим"}, text: "How are you "},
-        {sender: {name: "Максим"}, text: "How are you "},
-        {sender: {name: "Максим"}, text: "How are you "},
-        {sender: {name: "Максим"}, text: "How are you "},
-        {sender: {name: "Максим"}, text: "How are you "},
-        {sender: {name: "Максим"}, text: "How are you "},
-        {sender: {name: "Максим"}, text: "How are you "},
+        { sender: { name: 'Максим' }, text: 'Hello :)' },
+        { sender: { name: 'Максим' }, text: 'How are you ' },
+        { sender: { name: 'Максим' }, text: 'How are you ' },
+        { sender: { name: 'Максим' }, text: 'How are you ' },
+        { sender: { name: 'Максим' }, text: 'How are you ' },
+        { sender: { name: 'Максим' }, text: 'How are you ' },
+        { sender: { name: 'Максим' }, text: 'How are you ' },
+        { sender: { name: 'Максим' }, text: 'How are you ' },
         {
-          sender: {name: "Максим"},
-          text: "How are youHow are youHow are youHow are youHow are youHow are youHow are youHow are youHow are youHow are youHow are youHow are youHow are youHow are youHow are youHow are youHow are youHow are youHow are youHow are you "
+          sender: { name: 'Максим' },
+          text: 'How are youHow are youHow are youHow are youHow are youHow are youHow are youHow are youHow are youHow are youHow are youHow are youHow are youHow are youHow are youHow are youHow are youHow are youHow are youHow are you ',
         },
-        {text: "Hello hello"}
+        { text: 'Hello hello' },
       ],
-      newMessageText: ""
+      newMessageText: '',
     },
-    postsPage:{
+    postsPage: {
       posts: [
         {
           postBy: {
             img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRVMNrgrlhHs9bSC63sLecJsZ6S0QS2-iYJWMlQQFFhaU3vblOt',
-            name: 'Misha'
+            name: 'Misha',
           },
-          text: ' Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex facilis laborum minima mollitia nesciunt, Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex facilis laborum minima mollitia nesciunt, Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex facilis laborum minima mollitia nesciunt, Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex facilis laborum minima mollitia nesciunt, Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex facilis laborum minima mollitia nesciunt, Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex facilis laborum minima mollitia nesciunt, Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex facilis laborum minima mollitia nesciunt, Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex facilis laborum minima mollitia nesciunt, Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex facilis laborum minima mollitia nesciunt, Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex facilis laborum minima mollitia nesciunt, perferendis?'
+          text: ' Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex facilis laborum minima mollitia nesciunt, Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex facilis laborum minima mollitia nesciunt, Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex facilis laborum minima mollitia nesciunt, Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex facilis laborum minima mollitia nesciunt, Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex facilis laborum minima mollitia nesciunt, Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex facilis laborum minima mollitia nesciunt, Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex facilis laborum minima mollitia nesciunt, Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex facilis laborum minima mollitia nesciunt, Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex facilis laborum minima mollitia nesciunt, Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex facilis laborum minima mollitia nesciunt, perferendis?',
         }, {
           postBy: {
             img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRVMNrgrlhHs9bSC63sLecJsZ6S0QS2-iYJWMlQQFFhaU3vblOt',
-            name: 'Misha'
+            name: 'Misha',
           },
-          text: 'Hello my friends:) Im fine!'
+          text: 'Hello my friends:) Im fine!',
         },
         {
           postBy: {
             img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQazb7jkkWezbOBw7uKRZ2sDY15KQy55Fq5p818eYeEg1MR2QfFxg',
-            name: 'Вася'
+            name: 'Вася',
           },
-          text: 'Hello Misha))'
-        }
+          text: 'Hello Misha))',
+        },
       ],
-      newPostText: ""
+      newPostText: '',
     },
-    profilePage:{
-      person: {id: 1, name: 'Misha Sonstav', country: 'Belarus'}
-    }
+    profilePage: {
+      person: { id: 1, name: 'Misha Sonstav', country: 'Belarus' },
+    },
   },
   getState() {
     return this._state;
@@ -65,11 +65,10 @@ let store = {
     messagesPageReducer(this._state.messagesPage, action);
     postsPageReducer(this._state.postsPage, action);
     this._callObserver(this._state);
-  }
+  },
 };
 
-//TODO REFACTOR!!!
-
+// TODO REFACTOR!!!
 
 
 export default store;

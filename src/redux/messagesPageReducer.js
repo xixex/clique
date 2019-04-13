@@ -1,23 +1,23 @@
-const UPDATE_NEW_MESSAGE_TEXT = "UPDATE-NEW-MESSAGE-TEXT";
-const SEND_MESSAGE = "SEND-MESSAGE";
+const UPDATE_NEW_MESSAGE_TEXT = 'UPDATE-NEW-MESSAGE-TEXT';
+const SEND_MESSAGE = 'SEND-MESSAGE';
 
-let initialState = {
+const initialState = {
   messages: [
-    {sender: {name: "Максим"}, text: "Hello :)"},
-    {sender: {name: "Максим"}, text: "How are you "},
-    {sender: {name: "Максим"}, text: "How are you "},
-    {sender: {name: "Максим"}, text: "How are you "},
-    {sender: {name: "Максим"}, text: "How are you "},
-    {sender: {name: "Максим"}, text: "How are you "},
-    {sender: {name: "Максим"}, text: "How are you "},
-    {sender: {name: "Максим"}, text: "How are you "},
+    { sender: { name: 'Максим' }, text: 'Hello :)' },
+    { sender: { name: 'Максим' }, text: 'How are you ' },
+    { sender: { name: 'Максим' }, text: 'How are you ' },
+    { sender: { name: 'Максим' }, text: 'How are you ' },
+    { sender: { name: 'Максим' }, text: 'How are you ' },
+    { sender: { name: 'Максим' }, text: 'How are you ' },
+    { sender: { name: 'Максим' }, text: 'How are you ' },
+    { sender: { name: 'Максим' }, text: 'How are you ' },
     {
-      sender: {name: "Максим"},
-      text: "How are youHow are youHow are youHow are youHow are youHow are youHow are youHow are youHow are youHow are youHow are youHow are youHow are youHow are youHow are youHow are youHow are youHow are youHow are youHow are you "
+      sender: { name: 'Максим' },
+      text: 'How are youHow are youHow are youHow are youHow are youHow are youHow are youHow are youHow are youHow are youHow are youHow are youHow are youHow are youHow are youHow are youHow are youHow are youHow are youHow are you ',
     },
-    {text: "Hello hello"}
+    { text: 'Hello hello' },
   ],
-  newMessageText: ""
+  newMessageText: '',
 };
 function messagesPageReducer(state = initialState, action) {
   switch (action.type) {
@@ -26,7 +26,7 @@ function messagesPageReducer(state = initialState, action) {
       break;
     }
     case SEND_MESSAGE: {
-      state.messages.push({text: action.text});
+      state.messages.push({ text: action.text });
       state.newMessageText = '';
       break;
     }
@@ -39,8 +39,8 @@ function messagesPageReducer(state = initialState, action) {
 
 export default messagesPageReducer;
 
-export const updateNewMessageTextActionCreator = (text) => ({
+export const updateNewMessageTextActionCreator = text => ({
   type: UPDATE_NEW_MESSAGE_TEXT,
-  text: text
+  text,
 });
-export const sendMessageActionCreator = (text) => ({type: SEND_MESSAGE, text: text});
+export const sendMessageActionCreator = text => ({ type: SEND_MESSAGE, text });

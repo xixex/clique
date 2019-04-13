@@ -1,13 +1,13 @@
-import styles from "./Posts.module.css";
-import React from "react";
-import Post from "./Post/Post";
-import NewPost from "./NewPost/NewPost"
+import React from 'react';
+import styles from './Posts.module.css';
+import Post from './Post/Post';
+import NewPost from './NewPost/NewPost';
 
 const Posts = (props) => {
-  let postElements = props.posts.map(e => <Post post={e} key={e.text}/>).reverse();
+  const postElements = props.posts.map(e => <Post post={e} key={e.text} />).reverse();
   return (
     <div className={styles.posts}>
-      <NewPost newPostText = {props.newPostText} dispatch={props.dispatch}/>
+      <NewPost newPostText={props.newPostText} onPostChange={props.onPostChange} onSendPostClick={props.onSendPostClick} />
       {postElements}
     </div>
   );
