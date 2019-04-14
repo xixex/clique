@@ -4,7 +4,6 @@ import styles from './NewMessage.module.css';
 
 const NewMessage = (props) => {
   const ref = React.createRef();
-
   const onSendButtonClick = () => {
     props.onSendButtonClick(props.newMessageText);
   };
@@ -26,7 +25,9 @@ const NewMessage = (props) => {
           value={props.newMessageText}
           onChange={onMessageUpdate}
         />
-        <button className={styles.newMessage__btn} onClick={onSendButtonClick}>SEND</button>
+        <button type="submit" className={styles.newMessage__btn} onClick={onSendButtonClick}>
+          SEND
+        </button>
       </div>
     </div>
   );

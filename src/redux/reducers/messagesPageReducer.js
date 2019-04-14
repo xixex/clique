@@ -19,16 +19,14 @@ const initialState = {
   ],
   newMessageText: '',
 };
+
 function messagesPageReducer(state = initialState, action) {
   switch (action.type) {
     case UPDATE_NEW_MESSAGE_TEXT: {
-      state.newMessageText = action.text;
-      break;
+      return { ...state, newMessageText: action.text };
     }
     case SEND_MESSAGE: {
-      state.messages.push({ text: action.text });
-      state.newMessageText = '';
-      break;
+      return { ...state, messages: [...state.messages, action.message], newMessageText: '' };
     }
     default: {
       break;
@@ -43,4 +41,4 @@ export const updateNewMessageTextActionCreator = text => ({
   type: UPDATE_NEW_MESSAGE_TEXT,
   text,
 });
-export const sendMessageActionCreator = text => ({ type: SEND_MESSAGE, text });
+export const sendMessageActionCreator = text => ({ type: SEND_MESSAGE, message: { text } });

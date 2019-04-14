@@ -30,21 +30,16 @@ const initialState = {
 function postsPageReducer(state = initialState, action) {
   switch (action.type) {
     case ADD_POST: {
-      state.posts.push({
-        postBy: {
-          img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRVMNrgrlhHs9bSC63sLecJsZ6S0QS2-iYJWMlQQFFhaU3vblOt',
-          name: 'Misha',
-        },
-        text: action.text,
-      });
-      break;
+      return {
+        ...state,
+        posts: [...state.posts, action.post],
+        newPostText: '',
+      };
     }
     case UPDATE_NEW_POST_TEXT: {
-      state.newPostText = action.text;
-      break;
+      return { ...state, newPostText: action.text };
     }
     default: {
-      // console.log('wrong action type,' + action.type);
       break;
     }
   }
@@ -54,4 +49,13 @@ function postsPageReducer(state = initialState, action) {
 export default postsPageReducer;
 
 export const updateNewPostTextActionCreator = text => ({ type: UPDATE_NEW_POST_TEXT, text });
-export const addPostTextActionCreator = text => ({ type: ADD_POST, text });
+export const addPostTextActionCreator = text => ({
+  type: ADD_POST,
+  post: {
+    postBy: {
+      img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRVMNrgrlhHs9bSC63sLecJsZ6S0QS2-iYJWMlQQFFhaU3vblOt',
+      name: 'Misha',
+    },
+    text,
+  },
+});
