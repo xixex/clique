@@ -1,41 +1,31 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import styles from './MessageList.module.css';
 import Message from './Message/Message';
 
-
-class MessageList extends React.Component {
-  constructor(props) {
-    super(props);
-  }
-
-  scrollToBottom() {
-    const { scrollHeight } = this.messageList;
-    const height = this.messageList.clientHeight;
+const MessageList = (props) => {
+  const ref = React.createRef();
+  const messagesElements = props.messages.map(e => (
+    <Message
+      sender={e.sender}
+      text={e.text}
+    />
+  ));
+  useEffect(() => {
+    const messageList = ref.current;
+    const { scrollHeight } = messageList;
+    const height = messageList.clientHeight;
     const maxScrollTop = scrollHeight - height;
-    this.messageList.scrollTop = maxScrollTop > 0 ? maxScrollTop : 0;
-  }
+    messageList.scrollTop = maxScrollTop > 0 ? maxScrollTop : 0;
+  }, [props.messages]);
 
-  componentDidMount() {
-    this.scrollToBottom();
-  }
-
-  componentDidUpdate() {
-    this.scrollToBottom();
-  }
-
-  render() {
-    const messagesElements = this.props.messages.map(e => <Message sender={e.sender} text={e.text} />);
-    return (
-      <div
-        className={styles.messages__list}
-        ref={(div) => {
-          this.messageList = div;
-        }}
-      >
-        {messagesElements}
-      </div>
-    );
-  }
-}
+  return (
+    <div
+      className={styles.messages__list}
+      ref={ref}
+    >
+      {messagesElements}
+    </div>
+  );
+};
 
 export default MessageList;
