@@ -1,8 +1,10 @@
 import { connect } from 'react-redux';
+
 import {
   sendMessageActionCreator,
   updateNewMessageTextActionCreator,
-} from '../../redux/reducers/messagesPageReducer';
+} from '../../redux/reducers/messagesPage';
+
 import Messages from './Messages';
 
 

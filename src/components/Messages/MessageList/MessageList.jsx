@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
-import styles from './MessageList.module.css';
+
 import Message from './Message/Message';
+import styles from './MessageList.module.css';
 
 const MessageList = (props) => {
   const ref = React.createRef();

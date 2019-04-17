@@ -1,4 +1,5 @@
 import React from 'react';
+
 import styles from './Posts.module.css';
 import Post from './Post/Post';
 import NewPost from './NewPost/NewPost';

@@ -4,30 +4,18 @@ const UPDATE_NEW_POST_TEXT = 'UPDATE-NEW-POST-TEXT';
 const initialState = {
   posts: [
     {
+      id: 1,
       postBy: {
         img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRVMNrgrlhHs9bSC63sLecJsZ6S0QS2-iYJWMlQQFFhaU3vblOt',
         name: 'Misha',
       },
       text: ' Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex facilis laborum minima mollitia nesciunt, Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex facilis laborum minima mollitia nesciunt, Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex facilis laborum minima mollitia nesciunt, Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex facilis laborum minima mollitia nesciunt, Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex facilis laborum minima mollitia nesciunt, Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex facilis laborum minima mollitia nesciunt, Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex facilis laborum minima mollitia nesciunt, Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex facilis laborum minima mollitia nesciunt, Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex facilis laborum minima mollitia nesciunt, Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex facilis laborum minima mollitia nesciunt, perferendis?',
-    }, {
-      postBy: {
-        img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRVMNrgrlhHs9bSC63sLecJsZ6S0QS2-iYJWMlQQFFhaU3vblOt',
-        name: 'Misha',
-      },
-      text: 'Hello my friends:) Im fine!',
-    },
-    {
-      postBy: {
-        img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQazb7jkkWezbOBw7uKRZ2sDY15KQy55Fq5p818eYeEg1MR2QfFxg',
-        name: 'Вася',
-      },
-      text: 'Hello Misha))',
     },
   ],
   newPostText: '',
 };
 
-function postsPageReducer(state = initialState, action) {
+function postsPage(state = initialState, action) {
   switch (action.type) {
     case ADD_POST: {
       return {
@@ -40,13 +28,12 @@ function postsPageReducer(state = initialState, action) {
       return { ...state, newPostText: action.text };
     }
     default: {
-      break;
+      return state;
     }
   }
-  return state;
 }
 
-export default postsPageReducer;
+export default postsPage;
 
 export const updateNewPostTextActionCreator = text => ({ type: UPDATE_NEW_POST_TEXT, text });
 export const addPostTextActionCreator = text => ({

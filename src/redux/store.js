@@ -1,13 +1,7 @@
-import { combineReducers, createStore } from 'redux';
-import messagesPageReducer from './reducers/messagesPageReducer';
-import postsPageReducer from './reducers/postsPageReducer';
-import profilePageReducer from './reducers/profilePageReducer';
+import { createStore } from 'redux';
 
-const reducers = combineReducers({
-  messagesPage: messagesPageReducer,
-  postsPage: postsPageReducer,
-  profilePage: profilePageReducer,
-});
+import reducers from './reducers';
+
 const store = createStore(reducers);
 
 export default store;

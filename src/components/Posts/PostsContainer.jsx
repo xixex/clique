@@ -1,8 +1,10 @@
 import { connect } from 'react-redux';
+
 import {
   addPostTextActionCreator,
   updateNewPostTextActionCreator,
-} from '../../redux/reducers/postsPageReducer';
+} from '../../redux/reducers/postsPage';
+
 import Posts from './Posts';
 
 

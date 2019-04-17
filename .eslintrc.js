@@ -18,6 +18,8 @@ module.exports = {
   plugins: [
     'react',
   ],
-  rules: {},
+  rules: {
+    'import/order': ['error', { 'newlines-between': 'always' }],
+  },
 
 };

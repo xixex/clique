@@ -1,4 +1,5 @@
 import React from 'react';
+
 import styles from './NewPost.module.css';
 
 const NewPost = (props) => {
